@@ -1,5 +1,14 @@
-DROP DATABASE IF EXISTS exampledb;
-CREATE DATABASE exampledb;
+DROP DATABASE IF EXISTS name_that_baby_db;
+CREATE DATABASE name_that_baby_db;
 
-DROP DATABASE IF EXISTS testdb;
-CREATE DATABASE testdb;
+USE name_that_baby_db;
+
+CREATE TABLE camNames(
+    id INT AUTO_INCREMENT NOT NULL 
+)
+
+
+CREATE TABLE chadNames(
+    id INT AUTO_INCREMENT NOT NULL 
+)
+

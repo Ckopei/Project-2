@@ -9,6 +9,13 @@ CREATE TABLE camNames(
 
 
 CREATE TABLE chadNames(
-    id INT AUTO_INCREMENT NOT NULL 
+    id INT AUTO_INCREMENT NOT NULL,
+    yearOfBirth YEAR NOT NULL,
+    sex VARCHAR (255) NOT NULL,
+    ethnicity VARCHAR (255) NOT NULL,
+    name VARCHAR (255) NOT NULL,
+    occurences INT NOT NULL,
+    nameRank INT NOT NULL,
+    PRIMARY KEY (id)
 )
 

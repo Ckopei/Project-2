@@ -4,8 +4,13 @@ CREATE DATABASE name_that_baby_db;
 USE name_that_baby_db;
 
 CREATE TABLE camNames(
-    id INT AUTO_INCREMENT NOT NULL 
-)
+    id INT AUTO_INCREMENT NOT NULL,
+    year YEAR NOT NULL,
+    name VARCHAR(30) NOT NULL,
+    percentage INT,
+    sex VARCHAR(30),
+    PRIMARY KEY(id)
+);
 
 
 CREATE TABLE chadNames(

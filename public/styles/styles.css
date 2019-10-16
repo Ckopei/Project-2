@@ -1,8 +1,9 @@
+
 * {
   font-family: 'Cormorant Garamond', serif;
   /* font-family: 'Lobster', cursive; */
   font-size: 24px;
-  
+ 
 }
 
 body {
@@ -26,6 +27,7 @@ select {
   display: block;
   margin: 20px auto;
   border: 1px solid;
+
 }
 
 button {
@@ -53,3 +55,4 @@ input[type=text] {
   margin: 0 auto;
   display: block;
 }
+

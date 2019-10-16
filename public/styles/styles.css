@@ -1,7 +1,55 @@
-form.signup,
-form.login {
-  margin-top: 50px;
+* {
+  font-family: 'Cormorant Garamond', serif;
+  /* font-family: 'Lobster', cursive; */
+  font-size: 24px;
+  
 }
-.list-group-item {
-line-height: 2.5;
+
+body {
+  border: 15px solid;
+  height: 100vh;
+}
+
+.bg {
+  background-image: url(http://1.bp.blogspot.com/-RWfJ6VI3ReA/U7HTPmuJyxI/AAAAAAAAFP8/3XyNnYHw_H8/s1600/OhSoLovely-PolkaDot-Desktop-03.png);
+  /* Full height */
+height: 25%; 
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+select {
+  font-family: 'Cormorant Garamond', serif;
+  display: block;
+  margin: 20px auto;
+  border: 1px solid;
+}
+
+button {
+  font-family: 'Cormorant Garamond', serif;
+  display: block;
+  margin: 20px auto;
+  background-color: black;
+  color: white;
+}
+
+.container {
+  width: 200vh;
+  height: 50%;
+  background-color: #ffffffc9;
+  border: 1px solid;
+  margin: 25px auto;
+  padding-top: 75px;
+}
+
+.logIn, .choiceText, .namesHeader {
+  text-align: center;
+}
+
+input[type=text] {
+  margin: 0 auto;
+  display: block;
 }

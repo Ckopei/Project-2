@@ -96,8 +96,47 @@ $(document).ready(function () {
     });
   };
 
+
   // Add event listeners to the submit and delete buttons
   $submitBtn.on("click", handleFormSubmit);
   $exampleList.on("click", ".delete", handleDeleteBtnClick);
+
+
+  if (!(example.text && example.description)) {
+    alert("You must enter an example text and description!");
+    return;
+  }
+
+  API.saveExample(example).then(function() {
+    refreshExamples();
+  });
+
+  $exampleText.val("");
+  $exampleDescription.val("");
+};
+
+// handleDeleteBtnClick is called when an example's delete button is clicked
+// Remove the example from the db and refresh the list
+var handleDeleteBtnClick = function() {
+  var idToDelete = $(this)
+    .parent()
+    .attr("data-id");
+
+  API.deleteExample(idToDelete).then(function() {
+    refreshExamples();
+  });
+};
+
+// Add event listeners to the submit and delete buttons
+$submitBtn.on("click", handleFormSubmit);
+$exampleList.on("click", ".delete", handleDeleteBtnClick);
+
+$("#submit-btn").on("click", function (event) {
+  event.preventDefault();
+  var gender = $("#gender").val();
+  var ethnicity = $("#ethnicity").val();
+  var letter = $("#letter").val().trim();
+  var resultQuantity = parseInt($("#amount").val());
+  console.log(gender, ethnicity, letter, resultQuantity);
 
 });

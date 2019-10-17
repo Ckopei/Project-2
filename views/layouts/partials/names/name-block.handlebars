@@ -1,0 +1,48 @@
+{{!-- https://handlebarsjs.com/block_helpers.html --}}
+
+{{!-- Handlebars.registerHelper("ifEven", function (index, options) {
+if(index%2 == 0){
+return options.fn(this);
+} else {
+return options.inverse(this);
+}
+}); --}}
+
+{{!-- https://handlebarsjs.com/block_helpers.html --}}
+
+{{!-- https://github.com/michalsnik/aos --}}
+{{!-- add CDN and figure out which JS file the initialization will go into. --}}
+
+{{!-- Add the animate for each side. fade right for top block, fade left for bottom block. --}}
+
+
+{{#ifEven @index}}
+
+<div class="row">
+    <div class="col-4">
+        <div class="babyName">
+            {{name}}
+            <a class="loveButton"><i class="fas fa-heart"></i></a>
+            <a class="trashButton"><i class="fas fa-trash"></i></a>
+        </div>
+    </div>
+    <div class="col-4"></div>
+    <div class="col-4"></div>
+</div>
+
+{{else}}
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4"></div>
+    <div class="col-4">
+        <div class="babyName">
+            {{name}}
+            <a class="loveButton"><i class="fas fa-heart"></i></a>
+            <a class="trashButton"><i class="fas fa-trash"></i></a>
+        </div>
+    </div>
+    
+</div>
+
+{{/ifEven}}

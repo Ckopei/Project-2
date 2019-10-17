@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
+    "password": "rootroot",
     "database": "name_that_baby_db",
     "host": "localhost",
     "dialect": "mysql"

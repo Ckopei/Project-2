@@ -12,7 +12,7 @@ var PORT = process.env.PORT || 3000;
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public"));
 // We need to use sessions to keep track of our user's login status
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
@@ -27,17 +27,18 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 // helper for handblars
-exphbs.registerHelper("ifEven", function (index, options) {
-  if (index % 2 === 0) {
-    return options.fn(this);
-  } else {
-    return options.inverse(this);
-  }
-});
+// exphbs.registerHelper("ifEven", function (index, options) {
+//   if (index % 2 === 0) {
+//     return options.fn(this);
+//   } else {
+//     return options.inverse(this);
+//   }
+// });
 
 // Routes
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+// Import routes and give the server access to them.
+var routes = require("./controllers/names_controller");
+app.use(routes);
 
 var syncOptions = { force: false };
 

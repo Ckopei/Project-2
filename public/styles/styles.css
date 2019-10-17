@@ -1,58 +1,280 @@
-
 * {
-  font-family: 'Cormorant Garamond', serif;
-  /* font-family: 'Lobster', cursive; */
+  /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+  /* font-family: 'Didact Gothic', sans-serif; */
+  background-color: rgb(255, 215, 154);
+  /* background: linear-gradient(#F24645 → #EBC08D)  */
+}
+
+/* title */
+
+.nameDiv {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  width: 350px;
+  background-color: #0a59e6;
+  text-align: center;
+  font-size: 90px;
+  color: white;
+  transform: translate(-150px, 10px) rotate(-4deg);
+  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+}
+.thatDiv {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  width: 350px;
+  background-color: darkgreen;
+  text-align: center;
+  font-size: 90px;
+  color: white;
+  transform: translate(130px, 0px) rotate(5deg);
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+}
+.babyDiv {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  width: 350px;
+  background-color: red;
+  text-align: center;
+  font-size: 90px;
+  color: white;
+  transform: translate(-230px, -80px);
+  margin: 0 auto;
+  z-index: 1;
+}
+
+/* shapes */
+
+.circleDiv {
+  width: 200px;
+  height: 200px;
+  border: 10px solid;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.innerCircle {
+  width: 200px;
+  height: 200px;
+  border: 10px solid white;
+  background-color: white;
+  border-radius: 50%
+}
+
+#circleOne {
+  position: fixed;
+  top: 65px;
+  left: 80px;
+}
+
+#innerCircleOne {
+  position: fixed;
+  top: 50px;
+  left: 100px;
+}
+
+#circleTwo {
+  position: fixed;
+  top: 45px;
+  right: 80px;
+} 
+
+#innerCircleTwo {
+  position: relative;
+  top: 0px;
+  right: 20px;
+}
+
+.triangleDiv {
+  width: 0;
+height: 0;
+border-left: 25px solid transparent;
+border-right: 25px solid transparent;
+border-bottom: 50px solid black;
+}
+
+/* .innerTriangle {
+  width: 0;
+height: 0;
+border-left: 25px solid transparent;
+border-right: 25px solid transparent;
+border-bottom: 50px solid white;
+} */
+
+#triangleOne {
+  position: fixed;
+  top: 630px;
+  left: 141px;
+  transform: rotate(30deg) scale(4, 10) translate(-10px, -10px);
+  z-index: 1;
+}
+
+/* #innerTriangleOne {
+  position: relative;
+  top: 130px;
+  left: 15px;
+} */
+
+#triangleTwo {
+  position: fixed;
+  top: 660px;
+  right: 331px;
+  transform: rotate(225deg) scale(4, 2) translate(10px, 100px);
+}
+
+.cardBackground {
+  width: 50vw;
+  height: 30vh;
+  background-color: rgb(255, 217, 102);
+  border: 1px solid;
+  border-radius: 20px 20px 20px 20px;
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+}
+
+.innerCard {
+  width: 50vw;
+  height: 30vh;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-radius: 20px 20px 20px 20px;
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+  transform: translate(10px, -20px);
+}
+
+/* selects and buttons */
+
+.choiceText {
+  text-align: center;
+  font-family: 'Didact Gothic', sans-serif;
+  background-color: white;
+  width: 280px;
+  margin: 0 auto;
+  margin-top: 20px;
   font-size: 24px;
- 
-}
-
-body {
-  border: 15px solid;
-  height: 100vh;
-}
-
-.bg {
-  background-image: url(http://1.bp.blogspot.com/-RWfJ6VI3ReA/U7HTPmuJyxI/AAAAAAAAFP8/3XyNnYHw_H8/s1600/OhSoLovely-PolkaDot-Desktop-03.png);
-  /* Full height */
-height: 25%; 
-
-/* Center and scale the image nicely */
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
 }
 
 select {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Didact Gothic', sans-serif;
   display: block;
   margin: 20px auto;
   border: 1px solid;
-
-}
-
-button {
-  font-family: 'Cormorant Garamond', serif;
-  display: block;
-  margin: 20px auto;
-  background-color: black;
-  color: white;
-}
-
-.container {
-  width: 200vh;
-  height: 50%;
-  background-color: #ffffffc9;
-  border: 1px solid;
-  margin: 25px auto;
-  padding-top: 75px;
-}
-
-.logIn, .choiceText, .namesHeader {
-  text-align: center;
+  background-color: white;
+  width: 200px;
 }
 
 input[type=text] {
   margin: 0 auto;
   display: block;
+  background-color: white;
+}
+
+button {
+  font-family: 'Didact Gothic', sans-serif;
+  display: block;
+  margin: 20px auto;
+  background-color: black;
+  color: white;
+  width: 80px;
+  height: 30px;
+}
+
+.logIn {
+  position: fixed;
+  right: 20px;
+  top: 10px;
+}
+
+.nameContainer {
+  width: 75vw;
+  height: auto;
+}
+
+.loginCard {
+  width: 50vw;
+  height: 50vh;
+  background-color: rgb(255, 217, 102);
+  border: 1px solid;
+  border-radius: 20px 20px 20px 20px;
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+}
+
+.loginInnerCard {
+  width: 50vw;
+  height: 50vh;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-radius: 20px 20px 20px 20px;
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+  transform: translate(10px, -20px);
+}
+
+form {
+  background-color: white;
+  margin: 60px;
+}
+
+.h4 {
+  font-family: 'Didact Gothic', sans-serif;
+  text-align: center;
+  background-color: white;
+}
+
+#defaultLoginFormEmail, #defaultLoginFormPassword {
+  margin: 10px auto;
+  width: 250px;
+  border-radius: 10px 10px 10px 10px;
+  display: block;
+  background-color: white;
+}
+
+.custom-control {
+  font-family: 'Didact Gothic', sans-serif;
+  text-align: center;
+  background-color: white;  
+
+}
+
+.custom-control-label {
+  background-color: white;  
+}
+
+.forgotPassword {
+  background-color: white;  
+  text-align: center;
+  padding-top: 10px;
+}
+
+.forgotPassword > a {
+  font-family: 'Didact Gothic', sans-serif;
+  background-color: white;  
+  text-decoration: none;
+}
+
+.member {
+  text-align: center;
+  background-color: white;
+  font-family: 'Didact Gothic', sans-serif;
+
+}
+
+.member > a {
+  /* text-align: center; */
+  background-color: white;
+  text-decoration: none;
+  font-family: 'Didact Gothic', sans-serif;
+
+}
+
+.socials {
+  text-align: center;
+  background-color: white;
 }
 

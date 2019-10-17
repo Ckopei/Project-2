@@ -5,8 +5,8 @@ var router = express.Router();
 var db = require("../models");
 
 router.get("/", function (req, res) {
-  console.log("This is babyName function: " + babyName);
-  console.log("This is user function: " + user);
+  // console.log("This is babyName function: " + babyName);
+  // console.log("This is user function: " + user);
   // res.render("index", { name: "hey" });
   res.render("index", { layout: "singular.handlebars" });
 });
@@ -18,17 +18,18 @@ router.post("/search", function (req, res) {
   var startingLetter = req.body.startingLetter;
   var resultNum = req.body.resultNum;
 
-  db.babyName.findAll({
-    where: {
-      sex: genderChoice,
-      ethnicity: ethnicityChoice,
-      name: {
-        $like: startingLetter + "%"
-      }
-    },
-    limit: resultNum
+  db.BabyName.findAll({
+    // where: {
+    //   sex: genderChoice,
+    //   ethnicity: ethnicityChoice,
+    //   name: {
+    //     $ilike: startingLetter + "%"
+    //   }
+    // },
+    limit: 10
   }).then(function (results) {
     res.json(results);
+    console.log(results[2]._previousDataValues);
   });
 });
 

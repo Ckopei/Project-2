@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var BabyName = sequelize.define("BabyNames", {
+  var BabyName = sequelize.define("BabyName", {
     Year_of_birth: DataTypes.INTEGER,
     sex: DataTypes.STRING,
     ethnicity: DataTypes.STRING,

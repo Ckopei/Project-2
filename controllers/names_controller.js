@@ -6,8 +6,8 @@ var babyName = require("../models/babyName");
 var user = require("../models/user");
 
 router.get("/", function (req, res) {
-  // console.log(babyName);
-  // console.log(user);
+  console.log("This is babyName function: " + babyName);
+  console.log("This is user function: " + user);
   // res.render("index", { name: "hey" });
   res.render("index", {layout: "singular.handlebars"});
 });

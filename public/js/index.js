@@ -97,3 +97,11 @@ var handleDeleteBtnClick = function() {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+
+$("#submit-btn").on("click", function (event) {
+  event.preventDefault();
+  var gender = $("#gender").val();
+  var ethnicity = $("#ethnicity").val();
+  var letter = $("#letter").val().trim();
+  console.log(gender, ethnicity, letter);
+});

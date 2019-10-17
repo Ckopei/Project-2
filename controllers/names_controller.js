@@ -6,17 +6,18 @@ var babyName = require("../models/babyName");
 var user = require("../models/user");
 
 router.get("/", function (req, res) {
-  console.log(babyName);
-  console.log(user);
-
-
-  res.render("index", { name: "hey" });
+  // console.log(babyName);
+  // console.log(user);
+  // res.render("index", { name: "hey" });
+  res.render("index", {layout: "singular.handlebars"});
 });
 
 
-// router.post("/api/burgers", function (req, res) {
-//   var name = req.body.name;
-//   var vals = req.body.devoured;
+// router.post("/search", function (req, res) {
+//   var gender = req.body.gender;
+//   var ethnicity = req.body.ethnicity;
+//   var startingLetter = req.body.startingLetter;
+//   var resultNum = req.body.resultNum;
 //   burger.create(name, vals, function (result) {
 //     // Send back the ID of the new quote
 //     res.json({ id: result.insertId });

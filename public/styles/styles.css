@@ -38,7 +38,7 @@
   text-align: center;
   font-size: 90px;
   color: white;
-  transform: translate(-230px, -80px);
+  transform: translate(-170px, -80px);
   margin: 0 auto;
   z-index: 1;
 }
@@ -73,6 +73,26 @@
   left: 100px;
 }
 
+@keyframes circleMove {
+  0% {
+      position: relative;
+      top: 0px;
+      right: 20px;
+  }
+  50% {
+      position: relative;
+      top: 0px;
+      right: 40px;
+      /* transform: scale(0.5, 0.5); */
+      transform: translate(10px, 10px);
+  }
+  100% {
+      position: relative;
+      top: 0px;
+      right: 20px;
+  }
+}
+
 #circleTwo {
   position: fixed;
   top: 45px;
@@ -83,6 +103,9 @@
   position: relative;
   top: 0px;
   right: 20px;
+  animation-name: circleMove;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
 }
 
 .triangleDiv {
@@ -101,12 +124,42 @@ border-right: 25px solid transparent;
 border-bottom: 50px solid white;
 } */
 
+@keyframes triangleTilt {
+  0% {
+      /* transform: rotate(30deg); */
+      position: fixed;
+      top: 630px;
+      left: 141px;
+      transform: rotate(30deg) scale(4, 10) translate(-10px, -10px);
+      z-index: 1;
+  }
+  50% {
+      position: fixed;
+      top: 630px;
+      left: 141px;
+      transform: rotate(35deg) scale(4, 10) translate(-10px, -10px);
+      z-index: 1;
+  }
+  100% {
+      /* transform: rotate(30deg); */
+      position: fixed;
+      top: 630px;
+      left: 141px;
+      transform: rotate(30deg) scale(4, 10) translate(-10px, -10px);
+      z-index: 1;
+  }
+}
+
 #triangleOne {
   position: fixed;
   top: 630px;
   left: 141px;
   transform: rotate(30deg) scale(4, 10) translate(-10px, -10px);
   z-index: 1;
+  /* background-image: url(http://1.bp.blogspot.com/-RWfJ6VI3ReA/U7HTPmuJyxI/AAAAAAAAFP8/3XyNnYHw_H8/s1600/OhSoLovely-PolkaDot-Desktop-03.png); */
+  animation-name: triangleTilt;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
 }
 
 /* #innerTriangleOne {
@@ -277,4 +330,6 @@ form {
   text-align: center;
   background-color: white;
 }
+
+
 

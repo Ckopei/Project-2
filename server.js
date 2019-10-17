@@ -26,6 +26,14 @@ app.engine(
   })
 );
 app.set("view engine", "handlebars");
+// helper for handblars
+exphbs.registerHelper("ifEven", function (index, options) {
+  if (index % 2 === 0) {
+    return options.fn(this);
+  } else {
+    return options.inverse(this);
+  }
+});
 
 // Routes
 require("./routes/apiRoutes")(app);
@@ -40,8 +48,8 @@ if (process.env.NODE_ENV === "test") {
 }
 
 // Starting the server, syncing our models ------------------------------------/
-db.sequelize.sync(syncOptions).then(function() {
-  app.listen(PORT, function() {
+db.sequelize.sync(syncOptions).then(function () {
+  app.listen(PORT, function () {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
       PORT,

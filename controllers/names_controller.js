@@ -2,27 +2,35 @@ var express = require("express");
 
 var router = express.Router();
 
-var babyName = require("../models/babyName");
-var user = require("../models/user");
+var db = require("../models");
 
 router.get("/", function (req, res) {
   // console.log(babyName);
   // console.log(user);
   // res.render("index", { name: "hey" });
-  res.render("index", {layout: "singular.handlebars"});
+  res.render("index", { layout: "singular.handlebars" });
 });
 
 
-// router.post("/search", function (req, res) {
-//   var gender = req.body.gender;
-//   var ethnicity = req.body.ethnicity;
-//   var startingLetter = req.body.startingLetter;
-//   var resultNum = req.body.resultNum;
-//   burger.create(name, vals, function (result) {
-//     // Send back the ID of the new quote
-//     res.json({ id: result.insertId });
-//   });
-// });
+router.post("/search", function (req, res) {
+  var genderChoice = req.body.gender;
+  var ethnicityChoice = req.body.ethnicity;
+  var startingLetter = req.body.startingLetter;
+  var resultNum = req.body.resultNum;
+
+  db.babyName.findAll({
+    where: {
+      sex: genderChoice,
+      ethnicity: ethnicityChoice,
+      name: {
+        $like: startingLetter + "%"
+      }
+    },
+    limit: resultNum
+  }).then(function (results) {
+    res.json(results);
+  });
+});
 
 // router.put("/api/burgers/:id", function (req, res) {
 //   var condition = "id = " + req.params.id;

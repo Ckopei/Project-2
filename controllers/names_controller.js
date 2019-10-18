@@ -18,21 +18,23 @@ router.post("/search", function (req, res) {
   var genderChoice = req.body.gender;
   var ethnicityChoice = req.body.ethnicity;
   var startingLetter = req.body.startingLetter;
-  var resultNum = req.body.resultNum;
+  var resultNum = parseInt(req.body.resultNum);
   console.log(startingLetter);
 
   db.BabyName.findAll({
-    limit: 10,
     where: {
       sex: genderChoice,
       ethnicity: ethnicityChoice,
-      // name: { $iLike: startingLetter + "%"}
-    }
+      name: { [db.Sequelize.Op.like]: startingLetter + "%"}
+    },
+    limit: resultNum
   }).then(function (results) {
     // res.json(results);
-    res.render("names", {objNames: results});
+    res.render("names", { objNames: results });
     // console.log(results[2]._previousDataValues);
-    console.log(results[0].name);
+    for (var index = 0; index < 10; index++) {
+      console.log(results[index].name);
+    }
   });
 });
 

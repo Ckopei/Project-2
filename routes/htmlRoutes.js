@@ -8,6 +8,13 @@ module.exports = function (app) {
       name: "Welcome!"
     });
   });
+  // Load signup page
+  app.get("/signup", function (req, res) {
+
+    res.render("signup", {
+      name: "Welcome!"
+    });
+  });
 
   // Load example page and pass in an example by id
   app.get("/example/:id", function (req, res) {

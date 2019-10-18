@@ -1,5 +1,5 @@
 var express = require("express");
-var passport = require("../config/passport"); 
+var passport = require("../config/passport");
 var router = express.Router();
 var db = require("../models");
 
@@ -10,6 +10,9 @@ router.get("/", function (req, res) {
   res.render("index", { layout: "singular.handlebars" });
 });
 
+router.get("/login", function (req, res) {
+  res.render("login", { layout: "singular.handlebars" });
+});
 
 router.post("/search", function (req, res) {
   var genderChoice = req.body.gender;

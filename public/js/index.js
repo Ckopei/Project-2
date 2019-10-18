@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-  $("#submit-btn").on("click", function (event) {
+  $("#submit-btn").on("click", function () {
     event.preventDefault();
     var gender = $("#gender").val();
     var ethnicity = $("#ethnicity").val();

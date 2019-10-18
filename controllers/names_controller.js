@@ -1,7 +1,6 @@
 var express = require("express");
-
+var passport = require("../config/passport"); 
 var router = express.Router();
-
 var db = require("../models");
 
 router.get("/", function (req, res) {
@@ -17,19 +16,20 @@ router.post("/search", function (req, res) {
   var ethnicityChoice = req.body.ethnicity;
   var startingLetter = req.body.startingLetter;
   var resultNum = req.body.resultNum;
+  console.log(startingLetter);
 
   db.BabyName.findAll({
-    // where: {
-    //   sex: genderChoice,
-    //   ethnicity: ethnicityChoice,
-    //   name: {
-    //     $ilike: startingLetter + "%"
-    //   }
-    // },
-    limit: 10
+    limit: 10,
+    where: {
+      sex: genderChoice,
+      ethnicity: ethnicityChoice,
+      // name: { $iLike: startingLetter + "%"}
+    }
   }).then(function (results) {
-    res.json(results);
-    console.log(results[2]._previousDataValues);
+    // res.json(results);
+    res.render("names", {objNames: results});
+    // console.log(results[2]._previousDataValues);
+    console.log(results[0].name);
   });
 });
 

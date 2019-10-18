@@ -31,20 +31,7 @@ router.post("/search", function (req, res) {
     },
     limit: resultNum
   }).then(function (results) {
-    // res.json(results);
-    // res.render("names", {
-    //   objNames: results, helpers: {
-    //     ifEven: function (index, options) {
-    //       if (index % 2 === 0) {
-    //         return options.fn(this);
-    //       } else {
-    //         return options.inverse(this);
-    //       }
-    //     }
-    //   }
-    // });
     postResults = [];
-    // console.log(results[2]._previousDataValues);
     for (var index = 0; index < 10; index++) {
       console.log(results[index].name);
       postResults.push({
@@ -58,7 +45,15 @@ router.post("/search", function (req, res) {
 router.get("/names", function (req, res) {
   console.log(postResults);
   
-  res.render("names", {postResults});
+  res.render("names", {postResults, helpers: {
+    ifEven: function (index, options) {
+      if (index % 2 === 0) {
+        return options.fn(this);
+      } else {
+        return options.inverse(this);
+      }
+    }
+  }});
 });
 
 // router.put("/api/burgers/:id", function (req, res) {

@@ -20,9 +20,10 @@
     <!-- name container -->
 
     <div class="nameContainer">
-        {{#each objNames}}
+        {{#each postResults}}
 
-        {{> names/name-block}}
+        {{!-- {{> names/name-block}} --}}
+        <p>{{name}}</p>
         
         {{/each}}
     </div>

@@ -17,6 +17,9 @@ $(document).ready(function () {
       type: "POST",
       url: "/search",
       data: userParams
-    }).then(console.log("Object posted"));
+    }).then(function(){
+      window.location.href = "/names";
+      console.log("Object posted");
+    });
   });
 });

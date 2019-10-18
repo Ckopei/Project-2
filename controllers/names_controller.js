@@ -25,7 +25,7 @@ router.get("/signup", function (req, res) {
 
  var postResults = [];
 
-router.post("/search", function (req, res) {
+ router.post("/search", function (req, res) {
   var genderChoice = req.body.gender;
   var ethnicityChoice = req.body.ethnicity;
   var startingLetter = req.body.startingLetter;
@@ -41,6 +41,7 @@ router.post("/search", function (req, res) {
     limit: resultNum
   }).then(function (results) {
     postResults = [];
+    console.log("HEYOO" + results)
     for (var index = 0; index < 10; index++) {
       console.log(results[index].name);
       postResults.push({
@@ -49,6 +50,20 @@ router.post("/search", function (req, res) {
     }
     res.json(results)
   });
+});
+
+router.get("/names", function (req, res) {
+  console.log(postResults);
+  
+  res.render("names", {postResults, layout: "main.handlebars", helpers: {
+    ifEven: function (index, options) {
+      if (index % 2 === 0) {
+        return options.fn(this);
+      } else {
+        return options.inverse(this);
+      }
+    }
+  }});
 });
 
 

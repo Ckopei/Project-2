@@ -4,12 +4,12 @@ $(document).ready(function () {
     event.preventDefault();
     var gender = $("#gender").val();
     var ethnicity = $("#ethnicity").val();
-    // var startingLetter = $("#letter").val().trim();
+    var startingLetter = $("#letter").val().trim();
     var resultNum = parseInt($("#amount").val());
     var userParams = {
       gender: gender,
       ethnicity: ethnicity,
-      // startingLetter: startingLetter,
+      startingLetter: startingLetter,
       resultNum: resultNum
     };
     console.log(userParams);

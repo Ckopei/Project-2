@@ -19,21 +19,21 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Handlebars
-app.engine(
-  "handlebars",
-  exphbs({
-    defaultLayout: "main"
-  })
-);
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
-// helper for handblars
-// exphbs.registerHelper("ifEven", function (index, options) {
-//   if (index % 2 === 0) {
-//     return options.fn(this);
-//   } else {
-//     return options.inverse(this);
-//   }
-// });
+
+exphbs.create({
+  // Specify helpers which are only registered on this instance.
+  helpers: {
+    ifEven: function (index, options) {
+      if (index % 2 === 0) {
+        return options.fn(this);
+      } else {
+        return options.inverse(this);
+      }
+    }
+  }
+});
 
 // Routes
 // Import routes and give the server access to them.

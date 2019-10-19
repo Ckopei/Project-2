@@ -8,8 +8,8 @@ $(document).ready(function () {
   $("#signupBtn").on("click", function (event) {
     event.preventDefault();
     userData = {
-      email: $("#email-input").val().trim(),
-      password: $("#password-input").val().trim()
+      email: $("#defaultLoginFormEmail").val().trim(),
+      password: $("#defaultLoginFormPassword").val().trim()
     };
     console.log(userData);
 
@@ -25,8 +25,8 @@ $(document).ready(function () {
         // If there's an error, handle it by throwing up a bootstrap alert
       }).catch(handleLoginErr);
     // If we have an email and password, run the signUpUser function and empty the fields that they typed in
-    $("#email-input").val("");
-    $("#password-input").val("");
+    $("#defaultLoginFormEmail").val("");
+    $("#defaultLoginFormPassword").val("");
   });
 
 });

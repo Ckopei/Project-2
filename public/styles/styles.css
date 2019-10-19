@@ -7,6 +7,15 @@
 
 /* title */
 
+body {
+  overflow: hidden;
+}
+/* title */
+
+.title > a {
+  text-decoration: none;
+}
+
 .nameDiv {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   width: 350px;
@@ -347,9 +356,9 @@ form {
   background-color: white;
 }
 
-.signup {
+/* .signup {
   padding: 10px
-}
+} */
 
 button > a {
   text-decoration: none;

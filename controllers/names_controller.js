@@ -2,8 +2,8 @@ var express = require("express");
 var passport = require("../config/passport");
 var router = express.Router();
 var db = require("../models");
-  // Requiring bcrypt for password hashing. Using the bcryptjs version as the regular bcrypt module sometimes causes errors on Windows machines
-  var bcrypt = require("bcryptjs");
+// Requiring bcrypt for password hashing. Using the bcryptjs version as the regular bcrypt module sometimes causes errors on Windows machines
+var bcrypt = require("bcryptjs");
 
 router.get("/", function (req, res) {
   // console.log("This is babyName function: " + babyName);
@@ -12,7 +12,7 @@ router.get("/", function (req, res) {
   res.render("index", { layout: "singular.handlebars" });
 });
 
-router.post("/api/login", passport.authenticate("local"), function(req, res) {
+router.post("/api/login", passport.authenticate("local"), function (req, res) {
   res.json(req.user);
 });
 
@@ -23,13 +23,14 @@ router.get("/signup", function (req, res) {
   res.render("signup", { layout: "singular.handlebars" });
 });
 
- var postResults = [];
+var postResults = [];
+var resultNum;
 
- router.post("/search", function (req, res) {
+router.post("/search", function (req, res) {
   var genderChoice = req.body.gender;
   var ethnicityChoice = req.body.ethnicity;
   var startingLetter = req.body.startingLetter;
-  var resultNum = parseInt(req.body.resultNum);
+  resultNum = parseInt(req.body.resultNum);
   console.log(startingLetter);
 
   db.BabyName.findAll({
@@ -40,9 +41,10 @@ router.get("/signup", function (req, res) {
     },
     limit: resultNum
   }).then(function (results) {
+    console.log(results)
     postResults = [];
     console.log("testingggg" + results)
-    for (var index = 0; index < resultNum; index++) {
+    for (var index = 0; index < results.length; index++) {
       console.log(results[index].name);
       postResults.push({
         name: results[index].name
@@ -53,56 +55,82 @@ router.get("/signup", function (req, res) {
 });
 
 router.get("/names", function (req, res) {
+  console.log("################")
   console.log(postResults);
-  
-  res.render("names", {postResults, layout: "main.handlebars", helpers: {
-    ifEven: function (index, options) {
-      if (index % 2 === 0) {
-        return options.fn(this);
-      } else {
-        return options.inverse(this);
+  console.log("################")
+
+  function filterByProperty(array, propertyName) {
+    var occurrences = {}
+    return array.filter(function (x) {
+      var property = x[propertyName]
+      if (occurrences[property]) {
+        return false;
+      }
+      occurrences[property] = true;
+      return true;
+    })
+  }
+  var filteredResults = filterByProperty(postResults, "name");
+  var limitedResults = []
+  for (let i = 0; i < filteredResults.length; i++) {
+    if (filteredResults[i].name) {limitedResults.push(filteredResults[i])}
+    
+  }
+
+console.log("################")
+  console.log(limitedResults)
+  console.log("################")
+
+  res.render("names", {
+    limitedResults, layout: "main.handlebars", helpers: {
+      ifEven: function (index, options) {
+        if (index % 2 === 0) {
+          return options.fn(this);
+        } else {
+          return options.inverse(this);
+        }
       }
     }
-  }});
+  });
 });
 
 
-  // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
-  // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
-  // otherwise send back an error
-  router.post("/api/userdata", function(req, res) {
-    db.User.create({
-      email: req.body.email,
-      password: req.body.password
+// Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
+// how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
+// otherwise send back an error
+router.post("/api/userdata", function (req, res) {
+  db.User.create({
+    email: req.body.email,
+    password: req.body.password
+  })
+    .then(function () {
+      res.redirect(307, "/login");
     })
-      .then(function() {
-        res.redirect(307, "/login");
-      })
-      .catch(function(err) {
-        res.status(401).json(err);
-      });
-  });
+    .catch(function (err) {
+      res.status(401).json(err);
+    });
+});
 
-  // Route for logging user out
-  router.get("/logout", function(req, res) {
-    req.logout();
-    res.redirect("/");
-  });
+// Route for logging user out
+router.get("/logout", function (req, res) {
+  req.logout();
+  res.redirect("/");
+});
 
-  // Route for getting some data about our user to be used client side
-  router.get("/api/userdata", function(req, res) {
-    if (!req.user) {
-      // The user is not logged in, send back an empty object
-      res.json({});
-    } else {
-      // Otherwise send back the user's email and id
-      // Sending back a password, even a hashed password, isn't a good idea
-      res.json({
-        email: req.user.email,
-        id: req.user.id
-      });
-    }
-  });
+// Route for getting some data about our user to be used client side
+router.get("/api/userdata", function (req, res) {
+  if (!req.user) {
+    // The user is not logged in, send back an empty object
+    res.json({});
+  } else {
+    // Otherwise send back the user's email and id
+    // Sending back a password, even a hashed password, isn't a good idea
+    res.json({
+      email: req.user.email,
+      id: req.user.id
+    });
+  }
+});
 
 // router.put("/api/burgers/:id", function (req, res) {
 //   var condition = "id = " + req.params.id;

@@ -22,6 +22,9 @@
     "passport-local": "^1.0.0",
     "sequelize": "^5.8.6"
   },
+  "engines": {
+    "node": "10.16.2"
+  },
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",

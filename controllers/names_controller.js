@@ -41,8 +41,8 @@ router.get("/signup", function (req, res) {
     limit: resultNum
   }).then(function (results) {
     postResults = [];
-    console.log("HEYOO" + results)
-    for (var index = 0; index < 10; index++) {
+    console.log("testingggg" + results)
+    for (var index = 0; index < resultNum; index++) {
       console.log(results[index].name);
       postResults.push({
         name: results[index].name

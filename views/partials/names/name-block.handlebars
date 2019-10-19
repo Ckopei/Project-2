@@ -1,11 +1,9 @@
-
 {{!-- https://handlebarsjs.com/block_helpers.html --}}
 
 {{!-- https://github.com/michalsnik/aos --}}
 {{!-- add CDN and figure out which JS file the initialization will go into. --}}
 
 {{!-- Add the animate for each side. fade right for top block, fade left for bottom block. --}}
-
 
 {{#ifEven @index}}
 <br>
@@ -14,11 +12,11 @@
 <br>
 <br>
 <div class="row">
-    <div class="col-4 text-right" data-aos="fade-right">
-        <div class="babyName">
-            <a class="loveButton"><i class="fas fa-heart"></i></a>
-            {{name}}
-            <a class="trashButton"><i class="fas fa-trash"></i></a>
+    <div class="col-4 text-center" data-aos="fade-right">
+        <div class="babyName aqua-gradient">
+            {{!-- <a class="loveButton"><i class="fas fa-heart"></i></a> --}}
+            <h1 class="babies supertext">{{name}}</h1>
+            {{!-- <a class="trashButton"><i class="fas fa-trash"></i></a> --}}
         </div>
     </div>
     <div class="col-4"></div>
@@ -41,11 +39,11 @@
 <div class="row">
     <div class="col-4"></div>
     <div class="col-4"></div>
-    <div class="col-4 text-left" data-aos="fade-left">
-        <div class="babyName">
-            <a class="loveButton"><i class="fas fa-heart"></i></a>
-            {{name}}  
-            <a class="trashButton"><i class="fas fa-trash"></i></a>
+    <div class="col-4 text-center" data-aos="fade-left">
+        <div class="babyName aqua-gradient">
+            {{!-- <a class="loveButton"><i class="fas fa-heart"></i></a> --}}
+            <h1 class="babies supertext">{{name}}</h1>
+            {{!-- <a class="trashButton"><i class="fas fa-trash"></i></a> --}}
         </div>
     </div>
 </div>

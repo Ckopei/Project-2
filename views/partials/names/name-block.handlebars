@@ -8,32 +8,51 @@
 
 
 {{#ifEven @index}}
-
+<br>
+<br>
+<br>
+<br>
+<br>
 <div class="row">
-    <div class="col-4">
+    <div class="col-4 text-right" data-aos="fade-right">
         <div class="babyName">
-            {{name}}
             <a class="loveButton"><i class="fas fa-heart"></i></a>
+            {{name}}
             <a class="trashButton"><i class="fas fa-trash"></i></a>
         </div>
     </div>
     <div class="col-4"></div>
     <div class="col-4"></div>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 {{else}}
 
+<br>
+<br>
+<br>
+<br>
+<br>
 <div class="row">
     <div class="col-4"></div>
     <div class="col-4"></div>
-    <div class="col-4">
+    <div class="col-4 text-left" data-aos="fade-left">
         <div class="babyName">
-            {{name}}
             <a class="loveButton"><i class="fas fa-heart"></i></a>
+            {{name}}  
             <a class="trashButton"><i class="fas fa-trash"></i></a>
         </div>
     </div>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 {{/ifEven}}

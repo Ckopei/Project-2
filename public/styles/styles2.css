@@ -1,0 +1,47 @@
+.nameDiv {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    width: 350px;
+    background-color: #0a59e6;
+    text-align: center;
+    font-size: 90px;
+    color: white;
+    transform: translate(-150px, 10px) rotate(-4deg);
+    margin: 0 auto;
+    position: relative;
+    z-index: 3;
+  }
+  .thatDiv {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    width: 350px;
+    background-color: darkgreen;
+    text-align: center;
+    font-size: 90px;
+    color: white;
+    transform: translate(130px, 0px) rotate(5deg);
+    margin: 0 auto;
+    z-index: 2;
+    position: relative;
+  }
+  .babyDiv {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    width: 350px;
+    background-color: red;
+    text-align: center;
+    font-size: 90px;
+    color: white;
+    transform: translate(-170px, -80px);
+    margin: 0 auto;
+    z-index: 1;
+  }
+
+  body {
+      background-color: black;
+  }
+
+  .babies {
+      color: white;
+  }
+
+  .supertext {
+      font-size: 72px;
+  }

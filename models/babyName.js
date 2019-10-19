@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 module.exports = function(sequelize, DataTypes) {
   var BabyName = sequelize.define("BabyName", {
     Year_of_birth: DataTypes.INTEGER,

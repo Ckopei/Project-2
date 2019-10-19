@@ -337,14 +337,14 @@ form {
 
 .member {
   text-align: center;
-  background-color: white;
+  background-color: transparent;
   font-family: 'Didact Gothic', sans-serif;
 
 }
 
 .member > a {
   /* text-align: center; */
-  background-color: white;
+  background-color: transparent;
   text-decoration: none;
   font-family: 'Didact Gothic', sans-serif;
   width: 25vw;
@@ -583,3 +583,8 @@ transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
    width: auto;
    height: auto;
 }
+
+
+
+
+

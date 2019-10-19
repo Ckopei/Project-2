@@ -96,7 +96,9 @@
 #circleTwo {
   position: fixed;
   top: 45px;
-  right: 80px;
+  right: 40px;
+  width: 300px;
+  height: 300px;
 } 
 
 #innerCircleTwo {
@@ -106,6 +108,8 @@
   animation-name: circleMove;
   animation-duration: 4s;
   animation-iteration-count: infinite;
+  width: 300px;
+  height: 300px;
 }
 
 .triangleDiv {
@@ -178,7 +182,7 @@ border-bottom: 50px solid white;
 
 .cardBackground {
   width: 50vw;
-  height: 30vh;
+  height: 50vh;
   background-color: rgb(255, 217, 102);
   border: 1px solid;
   border-radius: 20px 20px 20px 20px;
@@ -189,7 +193,7 @@ border-bottom: 50px solid white;
 
 .innerCard {
   width: 50vw;
-  height: 30vh;
+  height: 50vh;
   background-color: #ffffff;
   border: 1px solid;
   border-radius: 20px 20px 20px 20px;
@@ -217,13 +221,17 @@ select {
   margin: 20px auto;
   border: 1px solid;
   background-color: white;
-  width: 200px;
+  width: 380px;
+  font-size: 14px;
 }
 
 input[type=text] {
-  margin: 0 auto;
   display: block;
   background-color: white;
+  margin: 10px auto;
+  width: 25vw;
+  border-radius: 10px 10px 10px 10px;
+  padding: 10px;
 }
 
 button {
@@ -274,8 +282,10 @@ button {
 }
 
 form {
-  background-color: white;
-  margin: 60px;
+  background-color: transparent;
+  margin: 0 auto;
+  height: 50vh;
+  padding: 70px;
 }
 
 .h4 {
@@ -432,16 +442,16 @@ nav {
  color: tomato;
 }
 
-#menuToggle
-{
+#menuToggle {
   /* display: block; */
   float: right;
   position: relative;
   top: 50px;
-  right: 70px;
+  right: 20px;
   z-index: 1;
-  -webkit-user-select: none;
+  /* -webkit-user-select: none; */
   user-select: none;
+  background-color: transparent;
 }
 
 #menuToggle input
@@ -525,21 +535,20 @@ nav {
 * Make this absolute positioned
 * at the top left of the screen
 */
-#menu
-{
- position: absolute;
-  width: 300px;
-  margin: -110px 0 0 80px;
-  padding: 50px;
-  padding-top: 125px;
-  /* background: #ededed; */
-  background: transparent;
-  list-style-type: none;
-  -webkit-font-smoothing: antialiased;
-   /* to stop flickering of text in safari */
-  transform-origin: 0% 0%;
-  /* transform: translate(-100%, 0); */
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+
+#menu {
+position: absolute;
+width: 300px;
+margin: -110px 0 0 -5px;
+padding: 50px;
+padding-top: 125px;
+/* background: #ededed; */
+background: transparent;
+list-style-type: none;
+-webkit-font-smoothing: antialiased;
+transform-origin: 0% 0%;
+/* transform: translate(-100%, 0); */
+transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 }
 
 #menu li
@@ -547,6 +556,7 @@ nav {
   padding: 10px 0;
   font-size: 22px;
   text-align: right;
+  background-color: transparent;
 }
 
 /*

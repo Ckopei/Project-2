@@ -11,16 +11,16 @@
 <br>
 <br>
 <br>
-<div class="row">
-    <div class="col-4 text-center" data-aos="fade-right">
+<div class="row parentRow">
+    <div class="col-lg-4 col-sm-12 text-center" data-aos="fade-right">
         <div class="babyName aqua-gradient">
-            {{!-- <a class="loveButton"><i class="fas fa-heart"></i></a> --}}
             <h1 class="babies supertext">{{name}}</h1>
-            {{!-- <a class="trashButton"><i class="fas fa-trash"></i></a> --}}
+            <button type="button" id="saveThisName" class="btn btn-primary">Love it!</button>
+            <button type="button" id="removeFromPage" class="btn btn-primary">Maybe Not</button>
         </div>
     </div>
-    <div class="col-4"></div>
-    <div class="col-4"></div>
+    <div class="col-lg-4 col-sm-0"></div>
+    <div class="col-lg-4 col-sm-0"></div>
 </div>
 <br>
 <br>
@@ -36,14 +36,14 @@
 <br>
 <br>
 <br>
-<div class="row">
-    <div class="col-4"></div>
-    <div class="col-4"></div>
-    <div class="col-4 text-center" data-aos="fade-left">
+<div class="row parentRow">
+    <div class="col-lg-4 col-sm-0"></div>
+    <div class="col-lg-4 col-sm-0"></div>
+    <div class="col-lg-4 col-sm-12 text-center" data-aos="fade-left">
         <div class="babyName aqua-gradient">
-            {{!-- <a class="loveButton"><i class="fas fa-heart"></i></a> --}}
-            <h1 class="babies supertext">{{name}}</h1>
-            {{!-- <a class="trashButton"><i class="fas fa-trash"></i></a> --}}
+            <h1 class="babies supertext">{{name}}</h1>  
+                <button type="button" id="saveThisName" class="btn btn-primary">Love it!</button>
+                <button type="button" id="removeFromPage" class="btn btn-primary">Maybe Not</button>
         </div>
     </div>
 </div>

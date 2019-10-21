@@ -1,11 +1,10 @@
 {
   "development": {
-    "username": "zn1cm6kqlvs73tsj",
-    "password": "xuws9gnucq5u509t",
-    "database": "xvr1hrfh1ps0j57y",
-    "host": "ffn96u87j5ogvehy.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "username": "root",
+    "password": "rootroot",
+    "database": "name_that_baby_db",
+    "host": "localhost",
     "port": 3306,
-    "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   },
   "test": {

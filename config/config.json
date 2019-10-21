@@ -5,6 +5,7 @@
     "database": "xvr1hrfh1ps0j57y",
     "host": "ffn96u87j5ogvehy.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "port": 3306,
+    "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   },
   "test": {
@@ -13,6 +14,7 @@
     "database": "xvr1hrfh1ps0j57y",
     "host": "ffn96u87j5ogvehy.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "port": 3306,
+    "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   },
   "production": {

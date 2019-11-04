@@ -2,8 +2,8 @@
 
 Application: Name That Baby!
 Team Members: Gelissa Leveille, David Lopez, Cameron Kopel, Chad Kaplan
-Project Manager: Chad Kaplan
-WireFrame: Express-Handlebars
+Project Manager: Cameron Kopel
+Templating Engine: Express-Handlebars
 
 # INTRO
 Name That Baby! is an application created for parents that will assist with randomly selecting names for their new born baby.  The mission statement is to provide a tool for parents that will greatly decrease the stress of naming a child.  There is a lot that a parent has to do to prepare for the coming of a child and 'Name That Baby' will help eliminate "Naming a Child" from that long list of 'To Do's'.  
